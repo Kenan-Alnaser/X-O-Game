@@ -15,7 +15,12 @@ let xIsNext = true;
 const letterToSymbol = (letter) => (letter === "x" ? xSymbol : oSymbol);
 
 const handleWin = (letter) => {
-  // change the gameIsLive status to false and add the winning message to the statusDiv
+  gameIsLive = false;
+  if (letter === "x") {
+    statusDiv.innerHTML = `${letterToSymbol(letter)} has won!`;
+  } else {
+    statusDiv.innerHTML = `<span>${letterToSymbol(letter)} has won!</span>`;
+  }
 };
 
 const checkGameStatus = () => {
