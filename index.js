@@ -15,6 +15,7 @@ let xIsNext = true;
 const letterToSymbol = (letter) => (letter === "x" ? xSymbol : oSymbol);
 
 const handleWin = (letter) => {
+  // change the gameIsLive status to false and add the winning message to the statusDiv
   gameIsLive = false;
   if (letter === "x") {
     statusDiv.innerHTML = `${letterToSymbol(letter)} has won!`;
@@ -126,8 +127,18 @@ const handleCellClick = (e) => {
   const classList = e.target.classList;
 
   // check if the game is still live and the targeted div has no 'X' or 'O' class
+  if (!gameIsLive || classList[1] === "x" || classList[1] === "o") {
+    return;
+  }
 
   // check whose turn it is and then check the game status
+  if (xIsNext) {
+    classList.add("x");
+    checkGameStatus();
+  } else {
+    classList.add("o");
+    checkGameStatus();
+  }
 };
 
 // event listeners
