@@ -111,7 +111,16 @@ const checkGameStatus = () => {
 };
 
 // event Handlers
-const handleReset = () => {};
+const handleReset = () => {
+  xIsNext = true;
+  statusDiv.innerHTML = `${xSymbol} is next`;
+  for (const cellDiv of cellDivs) {
+    cellDiv.classList.remove("x");
+    cellDiv.classList.remove("o");
+    cellDiv.classList.remove("won");
+  }
+  gameIsLive = true;
+};
 
 const handleCellClick = (e) => {
   const classList = e.target.classList;
