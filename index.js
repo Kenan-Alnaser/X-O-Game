@@ -111,6 +111,43 @@ const checkGameStatus = () => {
   }
 };
 
+// const checkGameStatus = () => {
+
+//   const isMagicCombination = (arr, target) => {
+//     for (let i = 0; i < arr.length; i++) {
+//       for (let j = i + 1; j < arr.length; j++) {
+//         for (let k = j + 1; k < arr.length; k++) {
+//           if (arr[i] + arr[j] + arr[k] === target) return true;
+//         }
+//       }
+//     }
+//     return false;
+//   };
+
+//   if (arrX.length >= 3) {
+//     if (isMagicCombination(arrX, 15)) {
+//       statusDiv.innerHTML = `${xSymbol} is winner`;
+//       gameIsLive = false;
+//     }
+//   }
+
+//   if (arrO.length >= 3) {
+//     if (isMagicCombination(arrO, 15)) {
+//       statusDiv.innerHTML = `${oSymbol} is winner`;
+//       gameIsLive = false;
+//     }
+//   }
+
+//   if (gameIsLive) {
+//     xIsNext = !xIsNext;
+//     if (xIsNext) {
+//       statusDiv.innerHTML = `${xSymbol} is next`;
+//     } else {
+//       statusDiv.innerHTML = `<span>${oSymbol} is next</span>`;
+//     }
+//   }
+// };
+
 // event Handlers
 const handleReset = () => {
   xIsNext = true;
